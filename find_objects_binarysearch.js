@@ -5,8 +5,8 @@ for (let i = 1; i < 65_000_000; i++) {
   array.push({ id: i, item: i });
 }
 
-const lookingNumberStart = 300;
-const lookingNumberMiddle = 50_000_000;
+const lookingNumberStart = 2;
+const lookingNumberMiddle = 32_500_000;
 const lookingNumberEnd = 64_999_998;
 const time1 = Date.now();
 

@@ -1,11 +1,11 @@
 var array = [];
-for (var i = 1; i < 100_000_000; i++) {
+for (var i = 1; i < 65_000_000; i++) {
   array.push(i);
 }
 
 const lookingNumberStart = 2;
-const lookingNumberMiddle = 50_000_000;
-const lookingNumberEnd = 99_999_999;
+const lookingNumberMiddle = 32_500_000;
+const lookingNumberEnd = 64_999_998;
 const time1 = Date.now();
 
 const binarySearch = (lookingNumber) => {
@@ -34,5 +34,5 @@ const binarySearch = (lookingNumber) => {
   }
 };
 
-const time2 = binarySearch(lookingNumberStart);
+const time2 = binarySearch(lookingNumberEnd);
 console.log("Execute time is2: ", time2 - time1);

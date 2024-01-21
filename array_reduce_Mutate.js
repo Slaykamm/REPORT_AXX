@@ -15,8 +15,8 @@ const result = arr2.reduce((acc, item) => {
   return acc;
 }, arr1);
 
-
-
+console.log("test arr1", arr1.length);
+console.log("test arr2", arr2.length);
 console.log("result", result.length);
 
 const time2 = Date.now();

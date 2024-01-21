@@ -1,12 +1,11 @@
 var array = [];
-for (var i = 0; i < 100_000_000; i++) {
+for (var i = 1; i < 65_000_000; i++) {
   array.push(i);
 }
 
-const lookingNumberStart = 1;
-const lookingNumberMiddle = 50_000_000;
-const lookingNumberEnd = 99_999_999;
-
+const lookingNumberStart = 2;
+const lookingNumberMiddle = 32_500_000;
+const lookingNumberEnd = 64_999_998;
 const time1 = Date.now();
 const result = array.find((item) => item === lookingNumberEnd);
 console.log("Result is:", result);
