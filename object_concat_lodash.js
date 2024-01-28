@@ -1,20 +1,13 @@
+import { getObject } from "./utils/getObject.js";
 import pkg from "lodash";
 const { merge } = pkg;
-
-function getObject(name) {
-  let obj = {};
-  for (let i = 0; i < 300_000; i++) {
-    Object.assign(obj, { [String(name) + i]: { id: i, name: String(i) } });
-  }
-  return obj;
-}
 
 const obj1 = getObject("first");
 const obj2 = getObject("second");
 
-const time1 = Date.now();
+const time1 = performance.now();
 const obj3 = merge({}, obj1, obj2);
-const time2 = Date.now();
+const time2 = performance.now();
 
 console.log("object1 length", Object.keys(obj1).length);
 console.log("object2 length", Object.keys(obj2).length);

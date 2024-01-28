@@ -1,24 +1,19 @@
-function makeArrayNumber() {
-  const arr = [];
-  for (let i = 0; i < 50_000_000; i++) {
-    arr.push(i);
-  }
-  return arr;
-}
-const arr1 = makeArrayNumber();
-const arr2 = makeArrayNumber();
+import { makeArray } from "./utils/makeArray";
 
-const time1 = Date.now();
+const arr1 = makeArray();
+const arr2 = makeArray();
+
+const time1 = performance.now();
 
 const result = arr2.reduce((acc, item) => {
   acc.push(item);
   return acc;
 }, arr1);
 
-console.log("test arr1", arr1.length);
-console.log("test arr2", arr2.length);
-console.log("result", result.length);
+const time2 = performance.now();
 
-const time2 = Date.now();
+console.log("array #1 length", arr1.length);
+console.log("array #2 length", arr2.length);
+console.log("result array length", result.length);
 
 console.log("timeToWork", time2 - time1);
