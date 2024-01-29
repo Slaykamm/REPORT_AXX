@@ -1,4 +1,4 @@
-import { makeArray } from "./utils/makeArray";
+import { makeArray } from "./utils/makeArray.js";
 
 const arr1 = makeArray();
 const arr2 = makeArray();
