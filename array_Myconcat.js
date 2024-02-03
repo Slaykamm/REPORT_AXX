@@ -181,16 +181,101 @@ const arr2 = makeArray();
 //   return result;
 // }
 
+// function myConcat(...args) {
+//   let length = 0;
+//   for (let i = 0; i < args.length; i++) {
+//     length += args[i].length || 0;
+//   }
+
+//   const result = new Array(length);
+//   const fromArr1 = Array.from(args[0]);
+//   const fromArr2 = Array.from(args[1]);
+//   // result[0] = fromArr1;
+//   return default result;
+// }
+
+// function myConcat() {
+//   const result = [];
+//   Array.prototype.forEach.call(arguments, (arr) => {
+//     Array.prototype.push.apply(result, arr);
+//   });
+//   return result;
+// }
+
+/** 2500 ms */
+// function myConcat(arr1, arr2) {
+//   const result = Array.from(arr1);
+//   // arr2.forEach((item) => result.push(item));
+
+//   return result;
+// }
+
+// LONG
+// function myConcat(arr1, arr2) {
+//   var arr = [];
+//   Array.prototype.push.apply(arr, arr1);
+//   Array.prototype.push.apply(arr, arr2);
+//   return Object.create(Array.prototype, Object.getOwnPropertyDescriptors(arr));
+// }
+
+// function* myConcat(arr1, arr2) {
+//   const result = Array.from(arr1);
+//   arr2.forEach((item) => result.push(item));
+
+//   yield result;
+// }
+// const result = myConcat(arr1, arr2).next().value;
+
+// function myConcat(arr1, arr2) {
+//   const arr = Array.from(arr1);
+//   // const result = Array.from(arr1);
+//   const result = [...arr1, ...arr2];
+//   return result;
+// }
+// yield()
+
+// 2100 ms
+// function myConcat(arr1, arr2) {
+//   var combinedArray = Array.from(arr1);
+//   for (var i = 0; i < arr2.length; i++) {
+//     combinedArray.push(arr2[i]);
+//   }
+//   return combinedArray;
+// }
+
 function myConcat(arr1, arr2) {
-  return { 0: Array.from(arr1) };
+  const result = Array(arr1.length + arr2.length);
+  // const result = [];
+  for (let i = 0; i < arr1.length; i++) {
+    result[i] = arr1[i];
+  }
+  for (let i = 0; i < arr2.length; i++) {
+    result[i + arr1.length] = arr2[i];
+  }
+
+  return result;
 }
 
 const time1 = performance.now();
 const result = myConcat(arr1, arr2);
+//3 long
+// const result2 = result.flat();
+//1 long
+// const result2 = result.flatMap((item) => item);
+//2 3000 ms
+// const result2 = [];
+// for (let i = 0; i < result.length; i++) {
+//   for (let j = 0; j < result[i].length; j++) {
+//     result2.push(result[i][j]);
+//   }
+// }
+
+// const result2 = result.flat(1);
+
 const time2 = performance.now();
 
+console.log("timeToWork", time2 - time1);
 console.log("array #1 length", arr1.length);
 console.log("array #2 length", arr2.length);
-console.log("result array length", result.length);
-
-console.log("timeToWork", time2 - time1);
+console.log("result array length", result.length); //
+// console.log("result2 array length", result2.length); //

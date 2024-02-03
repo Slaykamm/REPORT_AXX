@@ -4,7 +4,10 @@
  */
 export function makeArray() {
   const arr = [];
-  for (let i = 0; i < 50_000_000; i++) {
+  for (let i = 0; i < 5_000_000; i++) {
+    //
+    //0_000_000
+    //
     if (!(i % 2)) {
       arr.push(i);
       continue;
