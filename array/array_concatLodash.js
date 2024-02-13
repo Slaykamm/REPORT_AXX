@@ -1,9 +1,10 @@
 import pkg from "lodash";
+import { ARRAY_SIZE } from "../utils/consts.js";
+import { makeArray } from "../utils/makeArray.js";
 const { concat } = pkg;
-import { makeArray } from "./utils/makeArray.js";
 
-const arr1 = makeArray();
-const arr2 = makeArray();
+const arr1 = makeArray(ARRAY_SIZE);
+const arr2 = makeArray(ARRAY_SIZE);
 
 const time1 = performance.now();
 

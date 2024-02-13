@@ -1,13 +1,10 @@
 /**
  * Делает массив, состоящий из number, string, object, undefined, null
- * размером 50 000 000 шт.
+ * заданного размера
  */
-export function makeArray() {
+export function makeArray(size) {
   const arr = [];
-  for (let i = 0; i < 5_000_000; i++) {
-    //
-    //0_000_000
-    //
+  for (let i = 0; i < size; i++) {
     if (!(i % 2)) {
       arr.push(i);
       continue;
@@ -29,6 +26,26 @@ export function makeArray() {
       continue;
     }
     arr.push(undefined);
+  }
+  return arr;
+}
+
+/**
+ * Делает массив, string
+ * заданного размера
+ */
+export function makeRealObject(size) {
+  const arr = Array(size);
+  for (let i = 0; i < size; i++) {
+    arr[i] = { [String(i)]: { [String(i)]: String(i) } };
+  }
+  return arr;
+}
+
+export function makeStringArray(size) {
+  const arr = Array(size);
+  for (let i = 0; i < size; i++) {
+    arr[i] = String(i);
   }
   return arr;
 }

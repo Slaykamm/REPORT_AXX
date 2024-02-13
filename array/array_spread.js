@@ -1,7 +1,9 @@
-import { makeArray } from "./utils/makeArray.js";
+import { makeArray } from "../utils/makeArray.js";
+import { ARRAY_SIZE } from "../utils/consts.js";
+import { performance } from "perf_hooks";
 
-const arr1 = makeArray();
-const arr2 = makeArray();
+const arr1 = makeArray(ARRAY_SIZE);
+const arr2 = makeArray(ARRAY_SIZE);
 
 const time1 = performance.now();
 

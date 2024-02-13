@@ -1,4 +1,4 @@
-import { makeArray } from "./utils/makeArray.js";
+import { makeArray } from "../utils/makeArray.js";
 
 var heap = new ArrayBuffer(0x10000);
 var heap32 = new Int32Array(heap);
