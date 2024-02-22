@@ -21,10 +21,6 @@ export function makeArray(size) {
       arr.push({ id: i });
       continue;
     }
-    if (!(i % 10)) {
-      arr.push(String(null));
-      continue;
-    }
     arr.push(undefined);
   }
   return arr;

@@ -6,9 +6,7 @@ const arr1 = makeArray(ARRAY_SIZE);
 const arr2 = makeArray(ARRAY_SIZE);
 
 const time1 = performance.now();
-arr2.forEach((item) => {
-  arr1.push(item);
-});
+arr2.forEach((item) => arr1.push(item));
 
 const result = arr1;
 const time2 = performance.now();
